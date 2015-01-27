@@ -1,7 +1,7 @@
 package com.bitcamp.lab2;
 
 /**
- * Priprema za predavanja u petak 12.1, 12.2, 12.3.
+ * Priprema za predavanja u petak poglavlja: 12.1, 12.2, 12.3.
  * 
  * @author Sanela Grcic
  *

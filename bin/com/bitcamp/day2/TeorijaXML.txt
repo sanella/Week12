@@ -1,0 +1,34 @@
+Tema: XML
+Predavac: Vedad Letic
+
+
+
+<BitCamo> //- uvijek na pocetku pisemo, a na kraju zatvaramo sa </BitCamp>
+	<brojStudenata>22</brojStudenata>
+	<student>
+		<name>Sanela</name>
+		<surname>Grcic</surname>
+		<tel>+0603300636</tel>
+		<tel>+0603300637</tel>
+	</student>
+	<student>
+		<name> itd...
+
+	</student>
+
+
+
+</BitCamo> // - zatvaramo
+
+
+Class ... {
+	att1
+	att2
+	att3(class)
+	att4(class)
+	StringToXML(){
+		<class>
+			<att1>.....</att1>
+			....
+		...
+		</class> to XML
