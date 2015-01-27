@@ -3,83 +3,46 @@ package com.bitcamp.lab2;
 import java.util.Date;
 
 public class PrimeCounter extends Thread {
-
 	private int start;
-	private  int end;
+	private int end;
 	private int counter;
 	private Date startTime;
 	private Date endTime;
 	
-	public PrimeCounter(){
+	public PrimeCounter(int start, int end){
+		super();
 		this.start = start;
 		this.end = end;
-		this.counter = counter;
+		counter = 0;
 	}
 	
-
-	static double resultTime;
-
-	@Override
-	public void run() {
-		
-		countPrimes(a, b);
-	}
-
-	private static void calculateTime(double start, double end) {
-		resultTime = end - start;
-
-	}
-
-	private static void startDate() {
-
-		Date beginingDate = new Date();
-		start = (int) beginingDate.getTime();
-
-	}
-
-	private static void endDate() {
-		Date beginingDate = new Date();
-		end = (int) beginingDate.getTime();
-
-	}
-
-	public static int countPrimes(int a, int b) {
-		boolean prime = true;
-		int counter = 0;
-		for (int i = a; i < b; i++) {
-			prime = true;
-			for (int j = a + 1; j < i && prime == true; j++)
-				if (i % j == 0)
-					prime = false;
-			if (prime == true)
-				counter++;
-
-		}
-		return counter;
-
-	}
-
-	public static void main(String[] args) {
-
-
-
-		for (PrimeCounter p : pc) {
-			try {
-				p.join();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+	public void run(){
+		startTime = new Date();
+		for(int i = this.start; i < this.end; i++){
+			if( isPrime(i) == true){
+				this.counter++;
 			}
 		}
-		System.out.println("Gotovo");
-
-		startDate();
-		int counter;
-		
-		endDate();
-		calculateTime(start, end);
-		System.out.println(resultTime);
-
-
+		endTime = new Date();
+		printResult();
 	}
+	
+	public int getCount(){
+		return counter;
+	}
+	
+	public void printResult(){
+		System.out.printf("From %7d to %7d counted: %5d\n", start, end, counter);
+		System.out.println(" Thread time: " + ((double)(endTime.getTime() - startTime.getTime())/1000));
+	}
+	
+	private boolean isPrime(int num){
+		for(int i = 2; i < num; i++){
+			if( num % i == 0)
+				return false;
+		}
+		return true;
+	}
+
 }
+ 
