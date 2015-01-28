@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<people>
+ <person name = 'Sanela' surname = 'Grcic' >
+  <child name = 'Child' surname = '1' />
+</person>
+ <person name = 'Benjamin' surname = 'Talic' >
+</person>
+ <person name = 'Davor' surname = 'Stankovic' >
+</person>
+ <person name = 'Jesenko' surname = 'Gavric' >
+</person>
+ <person name = 'Nedzad' surname = 'Hamzic' >
+</person>
+</people>
