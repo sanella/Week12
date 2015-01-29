@@ -31,7 +31,7 @@ public class PersonReader {
 
 		XPath xPath = XPathFactory.newInstance().newXPath();
 
-		String expression = "/people/person/child";
+		String expression = "(//person[age > 3])[2]";
 		NodeList xmlPeople = (NodeList) xPath.compile(expression).evaluate(
 				xmldoc, XPathConstants.NODESET);
 
@@ -41,22 +41,24 @@ public class PersonReader {
 		for (int i = 0; i < xmlPeople.getLength(); i++) {
 			Node current = xmlPeople.item(i);
 
-			// moramo provjeriti da bi mogli koristiti metode npr getAttribute
 			if (current instanceof Element) {
-				// ako jeste onda kastamo:
+
 				Element currentElement = (Element) current;
-				// Uzimamo od prvog noda atribute name i surname
 				String name = currentElement.getAttribute("name");
 				String surname = currentElement.getAttribute("surname");
-				int age = Integer.parseInt(currentElement.getAttribute("age"));
-				// pravimo novi objekat kojem dodajemo atribute
+				NodeList childNodes = currentElement.getChildNodes();
+				int age = 0;
+				for (int j = 0; j < childNodes.getLength(); j++) {
+					if (childNodes.item(j).getNodeName().equals("age"))
+						age = Integer.parseInt(childNodes.item(j)
+								.getTextContent());
+				}
 				Person personTemp = new Person(name, surname, age);
-				// DIO ZA CHILDE:
-				// Pravimo novu NodeListu koja je lista od prve liste
 				NodeList xmlChildren = current.getChildNodes();
-				// sve isto kao i prvi put
 				for (int j = 0; j < xmlChildren.getLength(); j++) {
 					Node currentChild = xmlChildren.item(j);
+					if(currentChild.getNodeName().equals("age"))
+						continue;
 					if (currentChild instanceof Element) {
 						Element currentChildElement = (Element) currentChild;
 						String childName = currentChildElement

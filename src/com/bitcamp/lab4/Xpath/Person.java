@@ -43,8 +43,8 @@ public class Person {
 			Person temp = it.next();
 			// za svaki person iz liste moramo da ispisemo u xml
 			pw.println(" <person name = '" + temp.name + "' surname = '"
-					+ temp.surname + "' age ='" + temp.age + "' >");
-			
+					+ temp.surname +  "' >");
+			pw.println("  <age>" + temp.age +"</age>");
 			Iterator<Person> itChild = temp.children.iterator();
 			 
 			while(itChild.hasNext()){
