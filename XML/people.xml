@@ -1,14 +1,18 @@
 <?xml version="1.0"?>
 <people>
- <person name = 'Sanela' surname = 'Grcic' >
+ <person name = 'Sanela' surname = 'Grcic'age ='3' >
   <child name = 'Child' surname = '1' />
 </person>
- <person name = 'Benjamin' surname = 'Talic' >
+ <person name = 'Benjamin' surname = 'Talic'age ='2' >
+  <child name = 'Child' surname = '1' />
 </person>
- <person name = 'Davor' surname = 'Stankovic' >
+ <person name = 'Davor' surname = 'Stankovic'age ='4' >
+  <child name = 'Child' surname = '1' />
 </person>
- <person name = 'Jesenko' surname = 'Gavric' >
+ <person name = 'Jesenko' surname = 'Gavric'age ='5' >
+  <child name = 'Child' surname = '1' />
 </person>
- <person name = 'Nedzad' surname = 'Hamzic' >
+ <person name = 'Nedzad' surname = 'Hamzic'age ='6' >
+  <child name = 'Child' surname = '1' />
 </person>
 </people>

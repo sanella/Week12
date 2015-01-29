@@ -9,6 +9,8 @@ import javax.swing.text.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.xml.sax.InputSource;
+
 public class BitCampStudent {
 	public static int numberOfStudents = 22;
 	public ArrayList<Student> students = new ArrayList<Student>();
@@ -44,6 +46,6 @@ public class BitCampStudent {
 		File selectedFile = new File("xml.txt");
 		DocumentBuilder docReader 
         = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-        xmldoc = docReader.parse(new InputSource(new StringReader(selectedFile));
+        Document xmldoc = docReader.parse(new InputSource(new StringReader(".xml.txt")));
 	}
 }
